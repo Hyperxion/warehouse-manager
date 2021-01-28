@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
@@ -20,12 +19,11 @@ public class WarehouseManagerConfig {
     public ViewResolver thymeleafResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
-        //order has to be 0 to lad first. Also order for JSP resolver has to be 1
+        //order has to be 0 to load first. Also order for JSP resolver has to be 1 do they are not in confilct
         viewResolver.setOrder(0);
 
         return viewResolver;
     }
-
 
     //Here we add template resolver for thymeleaf
     @Bean
