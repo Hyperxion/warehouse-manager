@@ -16,22 +16,6 @@ public class WarehouseManagerConfig {
     //wherever we're going to use it
     private ApplicationContext applicationContext;
 
-    /*
-    This is an example of what is being done behind scenes by @SpringBootApplication in you conference appplication.
-    With suffix and prefix set up here, we can comment them out in application.properties file
-     */
-//    @Bean
-//    public ViewResolver viewResolver() {
-//        InternalResourceViewResolver bean = new InternalResourceViewResolver();
-//        bean.setPrefix("/WEB-INF/jsp/");
-//        bean.setSuffix(".jsp");
-//        //in case of multiple view resolvers, we can set order of execution and first to be successfully executed will be applied
-//        //for thymeleaf example we set this to 1
-//        bean.setOrder(1);
-//
-//        return bean;
-//    }
-
     @Bean
     public ViewResolver thymeleafResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
