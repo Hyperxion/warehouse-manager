@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th=xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/login.css">
@@ -8,13 +9,14 @@
 <body>
 <div class="login-page">
   <div class="form">
-    <form>
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="email address"/>
-      <input type="text" placeholder="password"/>
-      <input type="text" placeholder="password"/>
-      <button>create</button>
-      <p color="#ffffff">Already registered? <a href="javascript:history.back()">Sign In</a></p>
+    <form action="#" th:action="@{/saveUser}" th:object="${registration}" method="POST">
+<!--      We use start with curly braces to refer to the attribute of registration object-->
+      <input type="text" th:field="*{nickname}" placeholder="name"/>
+      <input type="password" th:field="*{email}" placeholder="email address"/>
+      <input type="text" th:field="*{password}" placeholder="password"/>
+      <input type="text" th:field="*{passwordVerified}" placeholder="password"/>
+      <button type="submit">Register</button>
+      <p >Already registered? <a href="javascript:history.back()">Sign In</a></p>
     </form>
   </div>
 </div>

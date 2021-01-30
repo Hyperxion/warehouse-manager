@@ -1,24 +1,25 @@
 package com.edemko.warehousemanager.model;
 
-import javax.validation.constraints.NotEmpty;
+import javax.persistence.*;
 
-public class Registration {
+@Entity
+@Table(name = "users")
+public class User {
 
-    @NotEmpty
+    @Id
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    private long id;
+
     private String nickname;
-    @NotEmpty
     private String password;
-    @NotEmpty
-    private String passwordVerified;
-    @NotEmpty
     private String email;
 
-    public String getPasswordVerified() {
-        return passwordVerified;
+    public long getId() {
+        return id;
     }
 
-    public void setPasswordVerified(String passwordVerified) {
-        this.passwordVerified = passwordVerified;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNickname() {
@@ -43,5 +44,15 @@ public class Registration {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", nickname='" + nickname + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
