@@ -32,6 +32,7 @@ public class WarehouseManagerConfig {
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setSuffix(".html");
+
         return templateResolver;
     }
 

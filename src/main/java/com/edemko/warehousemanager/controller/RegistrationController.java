@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class RegistrationController {
 
     //because we are doing a GET on the registration URL
-    @GetMapping("registration")
+    @GetMapping("/registration")
     //We need to replace basic model (Map<Model, Object> model) with @ModelAttribute. We name this @ModelAttribute so
     //we can reference it in our page. We tie it to actual object (Registration registration). Now we have our object bound by our
     //model to this ModelAttribute
