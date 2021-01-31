@@ -1,6 +1,7 @@
 package com.edemko.warehousemanager.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
@@ -10,9 +11,29 @@ public class User {
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private long id;
 
+    @NotEmpty
+    @Column
     private String nickname;
+
+    @NotEmpty
+    @Column
     private String password;
+
+    @Transient
+    @NotEmpty
+    private String passwordVerified;
+
+    @Column
+    @NotEmpty
     private String email;
+
+    public String getPasswordVerified() {
+        return passwordVerified;
+    }
+
+    public void setPasswordVerified(String passwordVerified) {
+        this.passwordVerified = passwordVerified;
+    }
 
     public long getId() {
         return id;
@@ -52,6 +73,7 @@ public class User {
                 "id=" + id +
                 ", nickname='" + nickname + '\'' +
                 ", password='" + password + '\'' +
+                ", passwordVerified='" + passwordVerified + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
