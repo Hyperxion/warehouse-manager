@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th=xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/login.css">
-  <title>Register</title>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
 <div class="login-page">
@@ -13,7 +14,7 @@
       <input type="text" th:field="*{nickname}" placeholder="Nickname"/>
 <!--        th:if checks for errors on field specified as parameter and th:error list all errors made for that field-->
 <!--        All errors are defined in validation.properties-->
-        <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+        <span class="has-error" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
 
       <input type="text" th:field="*{email}" placeholder="Email address"/>
         <span class="has-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
@@ -22,7 +23,7 @@
         <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
 
       <input type="password" th:field="*{passwordVerified}" placeholder="Verify password"/>
-        <span class="has-error" th:if="${#fields.hasErrors('passwordConfirm')}" th:errors="*{passwordConfirm}"></span>
+        <span class="has-error" th:if="${#fields.hasErrors('passwordVerified')}" th:errors="*{passwordVerified}"></span>
 
       <button type="submit">Register</button>
       <p >Already registered? <a href="javascript:history.back()">Sign In</a></p>
