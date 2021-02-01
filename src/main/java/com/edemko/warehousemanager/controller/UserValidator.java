@@ -23,13 +23,13 @@ public class UserValidator implements Validator {
     public void validate(Object o, Errors errors) {
         User user = (User) o;
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nickname", "NotEmpty");
         if (user.getNickname().length() < 6 || user.getNickname().length() > 32) {
             //error codes defined in validation.properties file
-            errors.rejectValue("username", "Size.userForm.username");
+            errors.rejectValue("nickname", "Size.userForm.nickname");
         }
         if (userService.findByNickname(user.getNickname()) != null) {
-            errors.rejectValue("username", "Duplicate.userForm.username");
+            errors.rejectValue("nickname", "Duplicate.userForm.nickname");
         }
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty");
@@ -38,7 +38,7 @@ public class UserValidator implements Validator {
         }
 
         if (!user.getPasswordVerified().equals(user.getPassword())) {
-            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
+            errors.rejectValue("passwordVerified", "Diff.userForm.passwordVerified");
         }
 
         if (!user.getEmail().contains("@")) {

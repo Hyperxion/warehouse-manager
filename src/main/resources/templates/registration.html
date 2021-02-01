@@ -9,8 +9,8 @@
 <body>
 <div class="login-page">
   <div class="form">
-    <form th:action="@{/saveUser}" th:object="${userForm}" method="POST">
-<!--      We use star with curly braces to refer to the attribute passed by UserController @{/saveUser} mapping-->
+    <form th:action="@{/registration}" th:object="${userForm}" method="POST">
+<!--      We use star with curly braces to refer to the attribute passed by UserController @{/registration} mapping-->
       <input type="text" th:field="*{nickname}" placeholder="Nickname"/>
 <!--        th:if checks for errors on field specified as parameter and th:error list all errors made for that field-->
 <!--        All errors are defined in validation.properties-->
