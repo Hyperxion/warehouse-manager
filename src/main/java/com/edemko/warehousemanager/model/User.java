@@ -1,7 +1,9 @@
 package com.edemko.warehousemanager.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -10,22 +12,26 @@ public class User {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private long id;
-
-    @NotEmpty
-    @Column
     private String nickname;
-
-    @NotEmpty
-    @Column
     private String password;
 
+    private String email;
+
     @Transient
-    @NotEmpty
     private String passwordVerified;
 
-    @Column
-    @NotEmpty
-    private String email;
+    @ManyToMany
+    //Roles defines access to other object
+    //they are required by spring security
+    private Set<Role> roles;
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     public String getPasswordVerified() {
         return passwordVerified;

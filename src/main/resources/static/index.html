@@ -9,11 +9,18 @@
 <body>
 <div class="login-page">
     <div class="form">
-        <form class="login-form">
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
-<!--            <button>login</button>-->
-            <a class="btn btn-primary" href="login" role="button">Login</a>&nbsp;
+<!--        We don't define /login POST controller, it is provided by Spring Security-->
+        <form class="login-form" th:action="@{/login}" method="post">
+            <span th:text="${message}"></span>
+            <input autofocus="true" name="nickname" type="text" placeholder="username"/>
+
+            <input name="password" type="password" placeholder="password"/>
+            <span class="has-error" th:text="${error}"></span>
+
+            <!--Automatically generated token to prevent Cross Site Request Forgery attacks (HTTP 403)-->
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <button type="submit">login</button>
+<!--            <a class="btn btn-primary" href="login" role="button">Login</a>&nbsp;-->
            <a class="btn btn-primary" href = "registration" role="button">Registration</a>
         </form>
     </div>
