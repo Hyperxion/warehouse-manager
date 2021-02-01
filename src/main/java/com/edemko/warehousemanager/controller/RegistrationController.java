@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.validation.Valid;
-
 //
 
 @Controller
@@ -54,13 +52,13 @@ public class RegistrationController {
 
         securityService.autoLogin(userForm.getNickname(), userForm.getPasswordVerified());
 
-        return "redirect:/welcome";
+        return "redirect:/main";
     }
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
         if (securityService.isAuthenticated()) {
-            return "redirect:/main";
+            return "redirect:/";
         }
 
         if (error != null)
@@ -69,7 +67,11 @@ public class RegistrationController {
         if (logout != null)
             model.addAttribute("message", "You have been logged out successfully.");
 
-        return "/";
+        return "login";
     }
 
+    @GetMapping({"/", "/main"})
+    public String welcome(Model model) {
+        return "main";
+    }
 }
