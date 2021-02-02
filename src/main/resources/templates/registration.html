@@ -9,7 +9,7 @@
 <body>
 <div class="login-page">
   <div class="form">
-    <form th:action="@{/registration}" th:object="${userForm}" method="POST">
+      <form method="POST" th:object="${userForm}" th:action="@{/registration}">
 <!--      We use star with curly braces to refer to the attribute passed by UserController @{/registration} mapping-->
       <input type="text" th:field="*{nickname}" placeholder="Nickname"/>
 <!--        th:if checks for errors on field specified as parameter and th:error list all errors made for that field-->
@@ -30,5 +30,6 @@
     </form>
   </div>
 </div>
+
 </body>
 </html>
