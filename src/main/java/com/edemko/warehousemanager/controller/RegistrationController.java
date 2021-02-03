@@ -53,13 +53,14 @@ public class RegistrationController {
 
         userService.saveUser(userForm);
 
-        securityService.autoLogin(userForm.getNickname(), userForm.getPasswordVerified());
+        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordVerified());
 
         return "redirect:/main";
     }
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
+
         if (securityService.isAuthenticated()) {
             return "redirect:/main";
         }

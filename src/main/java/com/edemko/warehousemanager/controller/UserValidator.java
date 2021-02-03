@@ -19,17 +19,15 @@ public class UserValidator implements Validator {
     }
 
     @Override
-    //this method is used in Registration controller for validating user form.
     public void validate(Object o, Errors errors) {
         User user = (User) o;
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nickname", "NotEmpty");
-        if (user.getNickname().length() < 6 || user.getNickname().length() > 32) {
-            //error codes defined in validation.properties file
-            errors.rejectValue("nickname", "Size.userForm.nickname");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty");
+        if (user.getUsername().length() < 6 || user.getUsername().length() > 32) {
+            errors.rejectValue("username", "Size.userForm.username");
         }
-        if (userService.findByNickname(user.getNickname()) != null) {
-            errors.rejectValue("nickname", "Duplicate.userForm.nickname");
+        if (userService.findByUsername(user.getUsername()) != null) {
+            errors.rejectValue("username", "Duplicate.userForm.username");
         }
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty");
@@ -38,7 +36,7 @@ public class UserValidator implements Validator {
         }
 
         if (!user.getPasswordVerified().equals(user.getPassword())) {
-            errors.rejectValue("passwordVerified", "Diff.userForm.passwordVerified");
+            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
         }
 
         if (!user.getEmail().contains("@")) {

@@ -1,18 +1,16 @@
 package com.edemko.warehousemanager.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table
 public class User {
 
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private long id;
-    private String nickname;
+    private String username;
     private String password;
 
     private String email;
@@ -49,12 +47,12 @@ public class User {
         this.id = id;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -77,7 +75,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", nickname='" + nickname + '\'' +
+                ", nickname='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", passwordVerified='" + passwordVerified + '\'' +
                 ", email='" + email + '\'' +

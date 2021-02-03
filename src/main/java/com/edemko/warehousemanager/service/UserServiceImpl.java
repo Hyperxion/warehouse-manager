@@ -20,13 +20,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(User user) {
+        System.out.println("User to be saved:");
+        user.toString();
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setRoles(new HashSet<>(roleRepository.findAll()));
+        System.out.println("User password encrypted and saved:");
+        user.toString();
         userRepository.save(user);
     }
 
     @Override
-    public User findByNickname(String username) {
-        return userRepository.findByNickname(username);
+    public User findByUsername(String nickname) {
+        return userRepository.findByUsername(nickname);
     }
 }

@@ -9,7 +9,7 @@
 <body>
 <div class="login-page">
     <div class="form">
-<!--        We don't define /login POST controller, it is provided by Spring Security-->
+<!--        We don't define @PostMapping /login in controller, it is provided by Spring Security-->
         <form class="login-form" th:action="@{/login}" method="post">
             <span th:text="${message}"></span>
             <input autofocus="true" name="nickname" type="text" placeholder="username"/>

@@ -11,10 +11,10 @@
   <div class="form">
       <form method="POST" th:object="${userForm}" th:action="@{/registration}">
 <!--      We use star with curly braces to refer to the attribute passed by UserController @{/registration} mapping-->
-      <input type="text" th:field="*{nickname}" placeholder="Nickname"/>
+      <input type="text" th:field="*{username}" placeholder="Nickname"/>
 <!--        th:if checks for errors on field specified as parameter and th:error list all errors made for that field-->
 <!--        All errors are defined in validation.properties-->
-        <span class="has-error" th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
+        <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
 
       <input type="text" th:field="*{email}" placeholder="Email address"/>
         <span class="has-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
