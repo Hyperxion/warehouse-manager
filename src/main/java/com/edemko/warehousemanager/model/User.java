@@ -18,9 +18,18 @@ public class User {
     @Transient
     private String passwordVerified;
 
-    @ManyToMany
     //Roles defines access to other object
     //they are required by spring security
+    //cascade type defines how will be child of parent treated - in our case, parent is User and child is roles.
+    //whenever we perform some of cascade (in this case it is applied to ALL operations) operation on parent
+    //it will apply to child too.
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinTable(
+//            name = "users_roles",
+//            joinColumns = @JoinColumn(
+//                    name = "user_id", referencedColumnName = "id"),//user_id is name of new column created in third table. it refers to column "id" in "user" table
+//            inverseJoinColumns = @JoinColumn(
+//                    name = "role_id", referencedColumnName = "id"))//same as for user_id
     private Set<Role> roles;
 
     public Set<Role> getRoles() {

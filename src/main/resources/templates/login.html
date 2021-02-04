@@ -12,7 +12,7 @@
 <!--        We don't define @PostMapping /login in controller, it is provided by Spring Security-->
         <form class="login-form" th:action="@{/login}" method="post">
             <span th:text="${message}"></span>
-            <input autofocus="true" name="nickname" type="text" placeholder="username"/>
+            <input autofocus="true" name="username" type="text" placeholder="username"/>
 
             <input name="password" type="password" placeholder="password"/>
             <span class="has-error" th:text="${error}"></span>

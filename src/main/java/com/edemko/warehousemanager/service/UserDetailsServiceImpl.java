@@ -16,12 +16,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-/*
-To implement login/authentication with Spring Security, we need to implement UserDetailsService interface.
-Implementation of UserDetailsService is where the authority mapping takes place. Once the user has authenticated,
-our loadUserByUsername method populates and returns a User object
- */
-
 public class UserDetailsServiceImpl implements UserDetailsService{
     @Autowired
     private UserRepository userRepository;
@@ -30,14 +24,15 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) {
         User user = userRepository.findByUsername(username);
-        //if user does not exist, throws pre-defined exception in spring security framework
-        if (user == null) throw new UsernameNotFoundException(username);
-
-        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        for (Role role : user.getRoles()){
-            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+        if (user == null) {
+            throw new UsernameNotFoundException(username);
         }
 
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<>(user.getRoles());
+//        for (Role role : user.getRoles()){
+//            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+//        }
+
+        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), user.getRoles());
     }
 }

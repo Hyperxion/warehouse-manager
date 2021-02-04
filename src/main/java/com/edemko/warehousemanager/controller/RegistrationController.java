@@ -52,7 +52,7 @@ public class RegistrationController {
         }
 
         userService.saveUser(userForm);
-
+        System.out.println("User " + userForm.getUsername() + " just logged in using password: " + userForm.getPasswordVerified());
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordVerified());
 
         return "redirect:/main";
