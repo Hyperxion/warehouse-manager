@@ -52,7 +52,6 @@ public class RegistrationController {
         }
 
         userService.saveUser(userForm);
-        System.out.println("User " + userForm.getUsername() + " just logged in using password: " + userForm.getPasswordVerified());
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordVerified());
 
         return "redirect:/main";
@@ -66,10 +65,10 @@ public class RegistrationController {
         }
 
         if (error != null)
-            model.addAttribute("error", "Your username and password is invalid.");
+            model.addAttribute("error", "Incorrect credentials.");
 
         if (logout != null)
-            model.addAttribute("message", "You have been logged out successfully.");
+            model.addAttribute("message", "You have been logged out.");
 
         return "login";
     }

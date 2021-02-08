@@ -36,7 +36,7 @@ public class UserValidator implements Validator {
         }
 
         if (!user.getPasswordVerified().equals(user.getPassword())) {
-            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
+            errors.rejectValue("passwordVerified", "Diff.userForm.passwordVerified");
         }
 
         if (!user.getEmail().contains("@")) {

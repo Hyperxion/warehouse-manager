@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
 <div class="login-page">
     <div class="form">
-<!--        We don't define @PostMapping /login in controller, it is provided by Spring Security-->
+        <!--        We don't define @PostMapping /login in controller, it is provided by Spring Security-->
         <form class="login-form" th:action="@{/login}" method="post">
-            <span th:text="${message}"></span>
+            <span class="my-info" th:text="${message}"></span>
             <input autofocus="true" name="username" type="text" placeholder="username"/>
-
             <input name="password" type="password" placeholder="password"/>
-            <span class="has-error" th:text="${error}"></span>
+            <p class="has-error" th:text="${error}"></p>
+
 
             <!--Automatically generated token to prevent Cross Site Request Forgery attacks (HTTP 403)-->
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button type="submit">login</button>
-<!--            <a class="btn btn-primary" href="login" role="button">Login</a>&nbsp;-->
-           <a class="btn btn-primary" href = "registration" role="button">Registration</a>
+
+            <a class="my-btn" href="registration" role="button">Registration</a>
         </form>
     </div>
 </div>

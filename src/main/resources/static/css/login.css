@@ -35,7 +35,7 @@
   border: 0;
   padding: 15px;
   margin: 0 0 15px;
-  color: #000000;
+  color: #ffffff;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
@@ -83,6 +83,7 @@
 .container .info span {
   color: #4d4d4d;
   font-size: 12px;
+
 }
 .container .info span a {
   color: #000000;
@@ -103,3 +104,22 @@ body {
 }
 
 
+
+.my-btn {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  background-color: #0010f2;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  width: 100%;
+}
+
+.my-btn:hover {
+  color: white;
+  background: #0eaedd;
+  text-decoration: none;
+}

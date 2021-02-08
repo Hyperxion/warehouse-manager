@@ -11,6 +11,7 @@
 	<groupId>com.edemko</groupId>
 	<artifactId>warehouse-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>warehouse-manager</name>
 	<description>Web app for managing warehouse and sales</description>
 	<properties>

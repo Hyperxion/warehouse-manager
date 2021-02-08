@@ -1,0 +1,80 @@
+body {
+    background: #0010f2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #0010f2, #0097f2);
+    background: -moz-linear-gradient(right, #0010f2, #0097f2);
+    background: -o-linear-gradient(right, #0010f2, #0097f2);
+    background: linear-gradient(to left, #0010f2, #0097f2);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.my-btn {
+    /*font-family: "Roboto", sans-serif;*/
+    text-transform: uppercase;
+    background-color: #0010f2;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width: 100%;
+}
+
+.my-btn:hover {
+    color: white;
+    background: #0eaedd;
+    text-decoration: none;
+    width: content-box;
+}
+
+.logout-btn {
+    position: absolute;
+    width: 300px;
+    margin: 5px 5px;
+    top:0;
+    right:0px;
+}
+
+.table-data {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    width:50%;
+    cursor: pointer;
+    text-align: center;
+
+    overflow-y:scroll;
+    height: 30%;
+    display:block;
+}
+
+.sticky {
+    position: sticky;
+}
+
+
+.tr:hover {
+    background-color: #0097f2;
+}
+
+.table-nav {
+    margin: auto auto 5px;
+    width:auto;
+    border-width: 0;
+}
+
+.left-side-panel {
+    width: 25%;
+    overflow-wrap: break-word;
+}
+
+li {
+    display: inline;
+}
+
+th {
+    position: sticky;
+    top: 0;
+}
