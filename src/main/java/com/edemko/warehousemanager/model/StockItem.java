@@ -3,20 +3,36 @@ package com.edemko.warehousemanager.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "stock")
+@Table(name = "stock_items")
 public class StockItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "stock_item_id")
     private long id;
 
     private String name;
     private String color;
     private long quantity;
+    private long sold;
     private double weight;
     private double buyPrice;
-    private double sellPrice;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "buy_order_id")//, insertable = false, updatable = false
+    //@OnDelete(action = OnDeleteAction.CASCADE)
+    private BuyOrder buyOrder;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id")//, insertable = false, updatable = false
+    //@OnDelete(action = OnDeleteAction.CASCADE)
+    private User user;
+
+    @Transient
+    private double avgPrice;
+
+    @Transient
+    private double avgMargin;
 
     public long getId() {
         return id;
@@ -50,6 +66,14 @@ public class StockItem {
         this.quantity = quantity;
     }
 
+    public long getSold() {
+        return sold;
+    }
+
+    public void setSold(long sold) {
+        this.sold = sold;
+    }
+
     public double getWeight() {
         return weight;
     }
@@ -66,11 +90,35 @@ public class StockItem {
         this.buyPrice = buyPrice;
     }
 
-    public double getSellPrice() {
-        return sellPrice;
+    public BuyOrder getBuyOrder() {
+        return buyOrder;
     }
 
-    public void setSellPrice(double sellPrice) {
-        this.sellPrice = sellPrice;
+    public void setBuyOrder(BuyOrder buyOrder) {
+        this.buyOrder = buyOrder;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public double getAvgPrice() {
+        return avgPrice;
+    }
+
+    public void setAvgPrice(double avgPrice) {
+        this.avgPrice = avgPrice;
+    }
+
+    public double getAvgMargin() {
+        return avgMargin;
+    }
+
+    public void setAvgMargin(double avgMargin) {
+        this.avgMargin = avgMargin;
     }
 }
