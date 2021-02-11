@@ -54,14 +54,14 @@ public class RegistrationController {
         userService.saveUser(userForm);
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordVerified());
 
-        return "redirect:/main";
+        return "redirect:/sellOrders";
     }
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
 
         if (securityService.isAuthenticated()) {
-            return "redirect:/main";
+            return "redirect:/sellOrders";
         }
 
         if (error != null)
@@ -71,10 +71,5 @@ public class RegistrationController {
             model.addAttribute("message", "You have been logged out.");
 
         return "login";
-    }
-
-    @GetMapping({"/", "/main"})
-    public String welcome(Model model) {
-        return "main";
     }
 }

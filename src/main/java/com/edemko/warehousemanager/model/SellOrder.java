@@ -23,11 +23,20 @@ public class SellOrder {
     private double price;
     private double costs;
     private double profit;
+    private long quantity;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id")//, nullable = false, insertable = false, updatable = false
     //@OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
+
+    public long getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(long quantity) {
+        this.quantity = quantity;
+    }
 
     public long getId() {
         return id;

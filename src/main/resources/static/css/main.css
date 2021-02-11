@@ -43,17 +43,26 @@ body {
     margin-top: auto;
     width:50%;
     cursor: pointer;
-    text-align: center;
+    text-align: left;
 
-    overflow-y:scroll;
-    height: 30%;
-    display:block;
+    /*overflow-y:scroll;*/
+    /*height: 30%;*/
+    /*display:block;*/
 }
 
 .sticky {
     position: sticky;
+    background-color: #0eaedd;
 }
 
+.overflow-hidden {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+#mydatatable_filter {
+    color: white;
+}
 
 .tr:hover {
     background-color: #0097f2;
@@ -77,4 +86,37 @@ li {
 th {
     position: sticky;
     top: 0;
+    white-space: nowrap;
+}
+
+td {
+    max-width: 250px;
+    overflow: auto;
+    white-space: nowrap;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+td::-webkit-scrollbar {
+    display: none;
+}
+
+table::-webkit-scrollbar {
+    display: none;
+}
+
+
+.example {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+a {
+    color: white;
 }

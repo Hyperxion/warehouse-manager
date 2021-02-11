@@ -1,0 +1,346 @@
+<!--This file is just for testing purposes-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="container mb-3 mt-3">
+
+    <table class="table table-striped table-bordered" style="width: 75%" id="mydatatable">
+        <thead>
+        <tr>
+            <th >Order Id</th>
+            <th >Comment</th>
+            <th >Price</th>
+            <th >Paid</th>
+            <th >Owner</th>
+            <th >Weight</th>
+            <th >UPS Tracking No.</th>
+            <th >Ship Date</th>
+            <th >Date Received</th>
+            <th >Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a href="#">164587</a></td>
+            <td>Filaments, 3D Printer Parts</td>
+            <td>1300.86€</td>
+            <td>YES</td>
+            <td>Daniel Demko</td>
+            <td>312kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.9.1997</td>
+            <td>11.2.1998</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>826.86€</td>
+            <td>YES</td>
+            <td>Peter Nejaky</td>
+            <td>325kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>In Transit</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>826.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>826.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr><tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr><tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><a href="#">164587</a></td>
+            <td>Filamnets, 3D Printer Parts</td>
+            <td>786.86€</td>
+            <td>YES</td>
+            <td>Erik Demko</td>
+            <td>125kg</td>
+            <td><a href="#">1Z7Y5E636841327500</a></td>
+            <td>23.10.2020</td>
+            <td>11.2.2021</td>
+            <td>FINISHED</td>
+        </tr>
+
+
+        </tbody>
+<!--        <tfoot>-->
+<!--        <tr>-->
+<!--            <th >Order Id</th>-->
+<!--            <th >Comment</th>-->
+<!--            <th >Price</th>-->
+<!--            <th >Paid</th>-->
+<!--            <th >Owner</th>-->
+<!--            <th >Weight</th>-->
+<!--            <th >UPS Tracking No.</th>-->
+<!--            <th >Ship Date</th>-->
+<!--            <th >Date Received</th>-->
+<!--            <th >Status</th>-->
+<!--        </tr>-->
+<!--        </tfoot>-->
+    </table>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src = "https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src = "https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    var table = $('#mydatatable').DataTable({
+        scrollY: 400,
+        scrollX: true,
+        scrollCollapse: true,
+        paging: false
+    });
+
+    $('#mydatatable thead th').each( function () {
+       var title = $(this).text();
+       $(this).html('<input type="text" style="width: 100%" placeholder="Search '+ title +'"/>');
+    });
+
+    table.columns().every( function () {
+        var that = this;
+        $('input', this.header()).on('keyup change', function () {
+            if (that.search() !== this.value) {
+                that.search(this.value).draw();
+            }
+        })
+    });
+
+</script>
+</body>
+</html>

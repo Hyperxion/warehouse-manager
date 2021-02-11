@@ -5,5 +5,6 @@ public enum Status {
     Received,
     In_Transit_CN,
     In_Transit_SK,
-    At_The_Carrier
+    At_The_Carrier,
+    Finished
 }
