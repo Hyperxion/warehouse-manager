@@ -71,7 +71,12 @@ public class MainController {
     }
 
     @GetMapping({"/"})
-    public String welcome(Model model) {
+    public String welcome() {
         return "sellOrders";
+    }
+
+    @GetMapping("newOwner")
+    public String newOwner() {
+        return "newOwner_modal";
     }
 }
